@@ -5,9 +5,11 @@
     <%= f.input :invoice_id %>
     <%= f.input :date %>
     <%= f.input :description %>
-    <%= f.input :ppu %>
+	<%= f.input :ppu, :collection => Job.all.collect { |j| [j.name, j.price]} %>
     <%= f.input :qtt %>
-    <%= f.input :price %>
+	<%= f.input :price %>
+	
+   
   </div>
 
   <div class="actions">

@@ -1,27 +1,23 @@
-<h2>Invoice</h2>
+<h2>Factura <%= @invoice.number %></h2>
 
 <%= render :partial => @invoice %>
 
 
-<h2>Blips</h2>
-<div id="blips">
-	<%= render :partial => @invoice.blips %>
-</div>
+<br/>
 
+<h4>Añadir trabajo</h4>
 <%= simple_form_for Blip.new(:invoice => @invoice), :remote => true do |f| %>
   <%= f.error_notification %>
-
   <div class="inputs">
     <%= f.hidden_field :invoice_id %>
 	<%= f.input :date %>
     <%= f.input :description %>
-    <%= f.input :ppu %>
+    <%= f.input :ppu, :collection => Job.all.collect { |j| [j.name, j.price]} %>
     <%= f.input :qtt %>
-    <%= f.input :price %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Add Blip" %>
+    <%= f.submit "Añadir" %>
   </div>
 <% end %>
 
@@ -29,5 +25,5 @@
 
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
-<%= link_to 'Preview', printshow_invoice_path(@invoice) %>
+<%= link_to 'Back', invoices_path %> |
+<%= link_to 'Print preview', printshow_invoice_path(@invoice) %>

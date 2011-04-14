@@ -9,7 +9,10 @@ class InvoicesController < ApplicationController
       format.xml  { render :xml => @invoices }
     end
   end
+  
+  
 
+ 
   def printshow
     @invoice = Invoice.find(params[:id])
 
@@ -28,6 +31,10 @@ class InvoicesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @invoice }
+      format.pdf do
+        render :pdf => "factura #{@invoice.number}",
+               :encoding => "utf-8"
+      end
     end
   end
 
