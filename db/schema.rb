@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110413234647) do
+ActiveRecord::Schema.define(:version => 20110414100031) do
+
+  create_table "blips", :force => true do |t|
+    t.integer  "invoice_id"
+    t.date     "date"
+    t.string   "description"
+    t.float    "ppu"
+    t.integer  "qtt"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -32,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110413234647) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "client_id"
+    t.string   "status"
   end
 
 end

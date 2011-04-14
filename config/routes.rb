@@ -1,4 +1,6 @@
 Invoicer::Application.routes.draw do
+  resources :blips
+
   resources :clients
 
   resources :invoices

@@ -34,7 +34,7 @@
     <%= f.text_field :total %>
   </div>
 
-  
+  	<%= f.input :status, :collection => ["cobrado", "e-enviado", "enviado"] %>
   <div class="actions">
     <%= f.submit %>
   </div>

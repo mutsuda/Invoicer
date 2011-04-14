@@ -1,0 +1,16 @@
+<%= simple_form_for(@blip) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :invoice_id %>
+    <%= f.input :date %>
+    <%= f.input :description %>
+    <%= f.input :ppu %>
+    <%= f.input :qtt %>
+    <%= f.input :price %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

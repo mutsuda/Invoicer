@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Invoice:</b>
+  <%= @blip.invoice_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @blip.date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @blip.description %>
+</p>
+
+<p>
+  <b>Ppu:</b>
+  <%= @blip.ppu %>
+</p>
+
+<p>
+  <b>Qtt:</b>
+  <%= @blip.qtt %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @blip.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_blip_path(@blip) %> |
+<%= link_to 'Back', blips_path %>

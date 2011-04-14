@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  invoice_id: 1
+  date: 2011-04-14
+  description: MyString
+  ppu: 1.5
+  qtt: 1
+  price: 1.5
+
+two:
+  invoice_id: 1
+  date: 2011-04-14
+  description: MyString
+  ppu: 1.5
+  qtt: 1
+  price: 1.5

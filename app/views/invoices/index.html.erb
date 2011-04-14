@@ -1,33 +1,5 @@
 <h1>Listing invoices</h1>
 
-<table>
-  <tr>
-    <th>Number</th>
-    <th>Date</th>
-	<th>Client</th>
-    <th>Comment</th>
-    <th>Base</th>
-    <th>Total</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @invoices.each do |invoice| %>
-  <tr>
-    <td><%= invoice.number %></td>
-    <td><%= invoice.date %></td>
-	<td><%= invoice.client.name %></td>
-    <td><%= invoice.comment %></td>
-    <td><%= invoice.base %></td>
-    <td><%= invoice.total %></td>
-    <td><%= link_to 'Show', invoice %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-    <td><%= link_to 'Destroy', invoice, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<%= render :partial => @invoices, :order_by => "date" %>
 
 <%= link_to 'New Invoice', new_invoice_path %>

@@ -1,7 +1,17 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
+
+
+#Extras
 gem "simple_form"
+gem 'wicked_pdf', :git => "git://github.com/rogercampos/wicked_pdf.git"
+gem 'wkhtmltopdf'
+
+
+
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

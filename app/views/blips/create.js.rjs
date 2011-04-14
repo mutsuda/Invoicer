@@ -1,0 +1,3 @@
+page.insert_html :bottom, :blips, :partial => @blip
+page[@blip].visual_effect :highlight
+page[:new_blip].reset

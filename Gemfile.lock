@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/rogercampos/wicked_pdf.git
+  revision: 69a4d93365b19772b5050413e2ec61e923f7fa90
+  specs:
+    wicked_pdf (0.5.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -65,6 +71,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.26)
+    wkhtmltopdf (0.1.2)
 
 PLATFORMS
   ruby
@@ -73,3 +80,5 @@ DEPENDENCIES
   rails (= 3.0.6)
   simple_form
   sqlite3
+  wicked_pdf!
+  wkhtmltopdf

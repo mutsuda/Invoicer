@@ -1,0 +1,16 @@
+<% div_for invoice do %>
+	  <b><%= invoice.number %></b>
+	  <%= invoice.date %>
+	  <%= invoice.client.name %>
+	  <%= invoice.total %>
+	  <%= invoice.status %>
+<% end %>
+
+<div id="blips">
+	<%= render :partial => invoice.blips %>
+</div>
+
+<%= link_to 'Edita', edit_invoice_path(invoice) %>
+<%= link_to 'Mostra', invoice_path(invoice) %>
+<%= link_to 'Elimina', invoice, :method => :delete, :confirm => "Segur?" %>
+<br/>
