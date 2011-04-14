@@ -3,7 +3,11 @@ Invoicer::Application.routes.draw do
 
   resources :clients
 
-  resources :invoices
+  resources :invoices do
+    member do
+      get 'printshow'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

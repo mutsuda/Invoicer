@@ -10,6 +10,16 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def printshow
+    @invoice = Invoice.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @invoice }
+    end
+  end
+
+
   # GET /invoices/1
   # GET /invoices/1.xml
   def show
