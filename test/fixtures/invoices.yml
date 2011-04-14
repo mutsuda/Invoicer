@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: MyString
+  date: 2011-04-14
+  comment: MyText
+  base: 1.5
+  total: 1.5
+
+two:
+  number: MyString
+  date: 2011-04-14
+  comment: MyText
+  base: 1.5
+  total: 1.5
