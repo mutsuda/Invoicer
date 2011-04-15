@@ -42,6 +42,7 @@ table td, table th { border: 1px solid black; padding: 5px; }
 #meta td.meta-head { background: #eee;   }
 #meta td textlabel {   }
 #meta td.blank { border: 1;  width:509px;}
+#meta td.client-data {width:509px;}
 
 #items { clear: both; width: 100%; margin: 30px 0 0 0; border: 1px solid black; }
 #items th { background: #eee; }
