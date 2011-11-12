@@ -1,4 +1,9 @@
 class InvoicesController < ApplicationController
+
+  
+  
+  
+  
   # GET /invoices
   # GET /invoices.xml
   def index
@@ -97,4 +102,9 @@ class InvoicesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  
+  
+  
 end

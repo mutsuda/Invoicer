@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110414152758) do
+ActiveRecord::Schema.define(:version => 20111111194558) do
 
   create_table "blips", :force => true do |t|
     t.integer  "invoice_id"
@@ -39,11 +39,18 @@ ActiveRecord::Schema.define(:version => 20110414152758) do
     t.date     "date"
     t.text     "comment"
     t.float    "base"
-    t.float    "total"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "client_id"
     t.string   "status"
+    t.float    "irpf"
+    t.float    "iva"
+    t.string   "client_name"
+    t.string   "client_address"
+    t.string   "client_zip"
+    t.string   "client_poblacio"
+    t.string   "client_ciutat"
+    t.string   "client_nif"
   end
 
   create_table "jobs", :force => true do |t|
