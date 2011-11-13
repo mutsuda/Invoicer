@@ -10,6 +10,7 @@ class Invoice < ActiveRecord::Base
   end
  
  
+ 
   def iva_price
     return self.iva*base_price
   end

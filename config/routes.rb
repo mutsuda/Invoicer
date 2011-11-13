@@ -10,6 +10,12 @@ Invoicer::Application.routes.draw do
       get 'printshow'
     end
   end
+  
+  root :to => "Invoices#index"
+  
+  #match '/invoices/by_year/:year' => 'Invoices#index', :as => 'invoices_by_year'
+  match 'invoices/by_date/:year(/:month)' => 'Invoices#index', :constraints => { :year => /\d{4}/ }
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

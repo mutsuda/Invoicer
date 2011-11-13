@@ -1,14 +1,14 @@
 class InvoicesController < ApplicationController
 
-  
-  
-  
-  
   # GET /invoices
   # GET /invoices.xml
   def index
-    @invoices = Invoice.all
-
+    if params[:year]
+      @invoices = Invoice.where(:date => params[:year]) //TODO
+     # @invoices = Invoice.where(:date.year => params[:year])  
+    else
+      @invoices = Invoice.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @invoices }

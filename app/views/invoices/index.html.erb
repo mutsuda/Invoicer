@@ -1,7 +1,32 @@
 <h1>Factures</h1>
 
-<%= render :partial => @invoices, :order_by => "date" %>
+<%- render :partial => @invoices, :order_by => "date" -%>
+
+
+<table>
+
+
+
+<% @invoices.each do |i|  %>
+<tr id = invoicetd onclick="window.location.href='<%= invoice_path(i) %>'">
+	<td><%= i.date %></td>
+	<td><%= i.client_name %></td>
+	<td>
+		<% i.blips.all.each do |b| %>
+			<%=b.description%>
+			<br>
+		<% end %>
+	</td>
+	<td><%= i.invoice_total %></td>
+	<td><%= i.status %></td>
+</tr>
+<% end %>
+</table>
+
+
+
 
 <br/>
 
 <%= link_to 'Nova factura', new_invoice_path %>
+<%= link_to 'Nou client', new_client_path %>

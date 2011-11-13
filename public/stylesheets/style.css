@@ -16,10 +16,41 @@
 	background-color: #eee;
 	padding-bottom: 5px;
 	padding-top: 5px;
-
+	
 	}
 
-* { margin: 0; padding: 0; }
+
+
+#invoicetd {
+	background-color: #eee;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-width: 5px;
+
+}
+
+#invoicetd:hover{
+	background-color: #ccc;
+	border-width: 5px;
+	border-color: blue;
+	color: #FFF;
+	font: bold;
+}
+
+#app_header{
+	height: 15px; width: 100%; background: #222; text-align: left;  padding: 8px 0px; 
+}
+
+#app_header_option{
+	color:white;
+	font: bold 15px Helvetica, Sans-Serif;
+	padding: 0px 0px 0px 5px;
+	text-decoration:none;
+}
+
+
+
+* { margin: 0px; padding: 0; }
 body { font: 14px/1.4 Georgia, serif; }
 #page-wrap { width: 800px; margin: 0 auto; }
 
