@@ -5,22 +5,22 @@ class Invoice < ActiveRecord::Base
   before_create :materialize_client
   before_create :materialize_impost
     
+  scope :for_year, lambda { |year| where('date >= ?', Date.new(year)).where('date < ?', Date.new(year) + 1.year) }  
+  
   def base_price
     return blips.map{|b| b.total}.sum
   end
- 
- 
- 
+
   def iva_price
-    return self.iva*base_price
+    self.iva*base_price
   end
   
   def irpf_price
-    return self.irpf*base_price
+    self.irpf*base_price
   end
   
   def invoice_total
-    return base_price+iva_price-irpf_price
+    base_price+iva_price-irpf_price
   end
  
   private
@@ -39,12 +39,4 @@ class Invoice < ActiveRecord::Base
       self.iva = 0.18
       self.irpf = 0.15
     end
-  
-  
-
-  
-  
-  
-  
-  
 end

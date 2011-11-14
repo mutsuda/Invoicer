@@ -3,21 +3,13 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.xml
   def index
-    if params[:year]
-      @invoices = Invoice.where(:date => params[:year]) //TODO
-     # @invoices = Invoice.where(:date.year => params[:year])  
-    else
-      @invoices = Invoice.all
-    end
+    @invoices = (year = params[:year].to_i) ? Invoice.for_year(year) : Invoice.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @invoices }
     end
   end
   
-  
-
- 
   def printshow
     @invoice = Invoice.find(params[:id])
 
@@ -26,7 +18,6 @@ class InvoicesController < ApplicationController
       format.xml  { render :xml => @invoice }
     end
   end
-
 
   # GET /invoices/1
   # GET /invoices/1.xml
@@ -102,9 +93,4 @@ class InvoicesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  
-  
-  
-  
 end
