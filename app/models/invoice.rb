@@ -5,7 +5,10 @@ class Invoice < ActiveRecord::Base
   before_create :materialize_client
   before_create :materialize_impost
     
-  scope :for_year, lambda { |year| where('date >= ?', Date.new(year)).where('date < ?', Date.new(year) + 1.year) }  
+  scope :for_period, lambda {|ini, lapse| where('date >= ?', ini).where('date < ?', ini + lapse) }
+  scope :for_year, lambda {|year| for_period(Date.new(year), 1.year) }
+  scope :for_year_and_month, lambda {|year, month| for_period(Date.new(year, month), 1.month) }
+  
   
   def base_price
     return blips.map{|b| b.total}.sum
@@ -31,8 +34,8 @@ class Invoice < ActiveRecord::Base
       self.client_poblacio = client.poblacio
       self.client_ciutat = client.city
       self.client_nif = client.nif
-      self.iva = 0.18
-      self.irpf = 0.15
+      self.iva = IVA
+      self.irpf = IRPF
     end
   
     def materialize_impost
