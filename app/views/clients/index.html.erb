@@ -9,20 +9,16 @@
     <th>City</th>
     <th>Nif</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @clients.each do |client| %>
   <tr>
-    <td><%= client.name %></td>
-    <td><%= client.address %></td>
-    <td><%= client.zip %></td>
-    <td><%= client.poblacio %></td>
-    <td><%= client.city %></td>
-    <td><%= client.nif %></td>
-    <td><%= link_to 'Show', client %></td>
-    <td><%= link_to 'Edit', edit_client_path(client) %></td>
+	<td><%= best_in_place client, :name %></td>
+    <td><%= best_in_place client, :address %></td>
+    <td><%= best_in_place client, :zip %></td>
+    <td><%= best_in_place client, :poblacio %></td>
+    <td><%= best_in_place client, :city %></td>
+    <td><%= best_in_place client, :nif %></td>
     <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -31,3 +27,11 @@
 <br />
 
 <%= link_to 'New Client', new_client_path %>
+
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    /* Activating Best In Place */
+    jQuery(".best_in_place").best_in_place();
+  });
+<% end %>
