@@ -8,7 +8,7 @@
 
 
 <% @invoices.each do |i|  %>
-<tr id = invoicetd onclick="window.location.href='<%= invoice_path(i) %>'">
+<tr id = "invoicetd" >
 	<td><%= i.date %></td>
 	<td><%= i.client_name %></td>
 	<td>
@@ -19,10 +19,14 @@
 	</td>
 	<td><%= i.invoice_total %></td>
 	<td><%= i.status %></td>
+	<td><%= best_in_place i, :status, :type => :select, :collection => [[1, "Idle"], [2, "Enviada"], [3, "e-Enviada"], [4, "Cobrada"]] %></td>
+	<td><%= link_to 'Mostra', invoice_path(i) %></td>
 </tr>
+	 
+
+	
 <% end %>
 </table>
-
 
 
 
@@ -30,3 +34,11 @@
 
 <%= link_to 'Nova factura', new_invoice_path %>
 <%= link_to 'Nou client', new_client_path %>
+
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    /* Activating Best In Place */
+    jQuery(".best_in_place").best_in_place();
+  });
+<% end %>

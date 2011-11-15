@@ -19,20 +19,20 @@
 	
 	}
 
-
+#statustd{
+	background-color: #FFF;
+}
 
 #invoicetd {
-	background-color: #eee;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	border-width: 5px;
+	background-color: #eee;  page-break-after: avoid;
+	border-width: 1px;
 
 }
 
 #invoicetd:hover{
 	background-color: #ccc;
-	border-width: 5px;
-	border-color: blue;
+	border-width: 1px;
+	border-color: white;
 	color: #FFF;
 	font: bold;
 }

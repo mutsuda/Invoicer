@@ -4,6 +4,14 @@ GIT
   specs:
     wicked_pdf (0.5.4)
 
+GIT
+  remote: https://github.com/bernat/best_in_place
+  revision: 927f473486f16781941f94694b506422fd084a69
+  branch: rails-3.0
+  specs:
+    best_in_place (0.2.2)
+      rails (~> 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -77,6 +85,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  best_in_place!
   rails (= 3.0.6)
   simple_form
   sqlite3
