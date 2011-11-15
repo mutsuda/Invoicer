@@ -8,7 +8,7 @@ gem "simple_form"
 gem 'wicked_pdf', :git => "git://github.com/rogercampos/wicked_pdf.git"
 gem 'wkhtmltopdf'
 gem "best_in_place", :git => "https://github.com/bernat/best_in_place", :branch => "rails-3.0"
-
+gem "nifval"
 
 
 # Bundle edge Rails instead:

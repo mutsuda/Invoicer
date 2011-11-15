@@ -53,6 +53,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    nifval (0.2.1)
+      activemodel
+      i18n
     polyglot (0.3.1)
     rack (1.2.2)
     rack-mount (0.6.14)
@@ -86,6 +89,7 @@ PLATFORMS
 
 DEPENDENCIES
   best_in_place!
+  nifval
   rails (= 3.0.6)
   simple_form
   sqlite3
