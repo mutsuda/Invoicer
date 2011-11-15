@@ -3,8 +3,10 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.xml
   def index
-    @invoices = if(year = params[:year].to_i) # year is there and integer
-      if (month = params[:month].to_i) # month is there and integer; but can be zero or over 12!
+    @invoices = if(params[:year]) # year is there and integer
+      year = params[:year].to_i
+      if (params[:month]) # month is there and integer; but can be zero or over 12!
+        month = params[:month].to_i
         Invoice.for_year_and_month(year, month)
       else
         Invoice.for_year(year)
