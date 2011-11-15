@@ -36,6 +36,7 @@ class Invoice < ActiveRecord::Base
       self.client_nif = client.nif
       self.iva = IVA
       self.irpf = IRPF
+      self.status = 1
     end
   
     def materialize_impost
