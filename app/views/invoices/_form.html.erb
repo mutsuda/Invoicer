@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
-  </div>
-  <div class="field">
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </div>
@@ -23,11 +19,9 @@
   <%= f.association :client %>
   <div class="field">
     <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
+    <div id = "comment"><%= f.text_area :comment %></div>
   </div>
 
-
-  	<%= f.input :status, :collection => ["cobrado", "e-enviado", "enviado"] %>
   <div class="actions">
     <%= f.submit %>
   </div>

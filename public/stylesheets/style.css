@@ -29,6 +29,12 @@
 
 }
 
+#comment{
+	
+	border-width: 4px;
+
+}
+
 #invoicetd:hover{
 	background-color: #ccc;
 	border-width: 1px;

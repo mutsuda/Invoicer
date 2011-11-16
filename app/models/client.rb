@@ -3,5 +3,4 @@ class Client < ActiveRecord::Base
   
   validates :nif, :nif => true
   
-  
 end
