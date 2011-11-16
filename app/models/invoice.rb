@@ -4,11 +4,13 @@ class Invoice < ActiveRecord::Base
   
   before_create :materialize_client
   before_create :materialize_impost
+  before_create :assign_number
     
   scope :for_period, lambda {|ini, lapse| where('date >= ?', ini).where('date < ?', ini + lapse) }
   scope :for_year, lambda {|year| for_period(Date.new(year), 1.year) }
   scope :for_year_and_month, lambda {|year, month| for_period(Date.new(year, month), 1.month) }
-  
+
+  scope :asc, order("created_at ASC")
   
   def base_price
     return blips.map{|b| b.total}.sum
@@ -42,5 +44,20 @@ class Invoice < ActiveRecord::Base
     def materialize_impost
       self.iva = 0.18
       self.irpf = 0.15
+    end
+    
+    def assign_number
+        y = Time.now.year
+        n = Invoice.for_year(y).count+1
+        fn = n.to_s.rjust(3,"0")
+        self.number = "#{y}-#{fn}"
+    end
+    
+    def assign_number
+        y = Time.now.year
+        li = Invoice.for_year(y).asc.last
+        lin = li.number.split("-").last.to_i
+        fn = (lin + 1).to_s.rjust(3,"0")
+        self.number = "#{y}-#{fn}"
     end
 end
