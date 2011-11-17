@@ -48,16 +48,12 @@ class Invoice < ActiveRecord::Base
     
     def assign_number
         y = Time.now.year
-        n = Invoice.for_year(y).count+1
-        fn = n.to_s.rjust(3,"0")
-        self.number = "#{y}-#{fn}"
-    end
-    
-    def assign_number
-        y = Time.now.year
         li = Invoice.for_year(y).asc.last
-        lin = li.number.split("-").last.to_i
-        fn = (lin + 1).to_s.rjust(3,"0")
-        self.number = "#{y}-#{fn}"
+        if (li)
+          lin = li.number.split("-").first.to_i
+          fn = (lin + 1).to_s.rjust(3,"0")
+          self.number = "#{fn}-#{y}"
+        else self.number = "001-#{y}"
+        end
     end
 end
