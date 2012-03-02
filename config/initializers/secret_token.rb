@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Invoicer::Application.config.secret_token = '711e2c4484ddd1afeade38cf96eb1316ed223eeb4c6a87bb0ffb6e5903ae52638695d8e6281a0d1c570cab8b7eb57b72040cb300d22dd162f2fa4a5801abb44a'
+Invoicer::Application.config.secret_token = 'df76eb4d61cb785712f82eeccb83cba4d9bae0beff7b85d953804aa3b0e5a276f0b29c3735000d9376794d2e2812394cec1fbe5c29adad57719f2c51da4a6678'
