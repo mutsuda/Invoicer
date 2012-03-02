@@ -2,18 +2,8 @@
 <html>
 <head>
   <title>Invoicer</title>
-  <%= stylesheet_link_tag :all %>
-
-  <%= javascript_include_tag "rails.js" %>
-  <%= javascript_include_tag "jquery-1.4.4.js" %>
-  <%= javascript_include_tag "jquery.purr.js" %>
-  <%= javascript_include_tag "best_in_place.js" %>
-  <%= javascript_include_tag "application.js" %>
-  <%= javascript_include_tag "test.js" %>
-  <%= javascript_include_tag "controls.js" %>
-  <%= javascript_include_tag "dragdrop.js" %>
-  <%= javascript_include_tag "controls.js" %>
-
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tag %>
 
@@ -22,16 +12,10 @@
 <a href="/invoices" id = "app_header_option">Factures</a>
 <a href="/clients" id = "app_header_option">Clients</a>
 
-
-
-
 </div>
-
 
 </head>
 <body>
-
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>
