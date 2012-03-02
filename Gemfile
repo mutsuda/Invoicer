@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.2.2'
 
 
 #Extras
 gem "simple_form"
 gem 'wicked_pdf', :git => "git://github.com/rogercampos/wicked_pdf.git"
 gem 'wkhtmltopdf'
-gem "best_in_place", :git => "https://github.com/bernat/best_in_place", :branch => "rails-3.0"
+gem "best_in_place"
 gem "nifval"
 
 
