@@ -25,7 +25,7 @@ class ClientsController < ApplicationController
   # GET /clients/new.xml
   def new
     @client = Client.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @client }
@@ -61,11 +61,10 @@ class ClientsController < ApplicationController
     respond_to do |format|
       if @client.update_attributes(params[:client])
         format.html { redirect_to(@client, :notice => 'Client was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @client.errors, :status => :unprocessable_entity }
       end
+      format.json{ respond_with_bip(@client) }
     end
   end
 
