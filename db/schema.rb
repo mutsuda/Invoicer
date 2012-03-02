@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -19,8 +20,8 @@ ActiveRecord::Schema.define(:version => 20111111194558) do
     t.float    "ppu"
     t.integer  "qtt"
     t.float    "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "clients", :force => true do |t|
@@ -30,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20111111194558) do
     t.string   "poblacio"
     t.string   "city"
     t.string   "nif"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "invoices", :force => true do |t|
@@ -39,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20111111194558) do
     t.date     "date"
     t.text     "comment"
     t.float    "base"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "client_id"
     t.string   "status"
     t.float    "irpf"
@@ -56,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20111111194558) do
   create_table "jobs", :force => true do |t|
     t.string   "name"
     t.float    "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
