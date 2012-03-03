@@ -88,6 +88,7 @@ class InvoicesController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @invoice.errors, :status => :unprocessable_entity }
       end
+      format.json{ respond_with_bip(@invoice) }
     end
   end
 
