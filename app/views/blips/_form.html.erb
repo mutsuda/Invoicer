@@ -7,7 +7,6 @@
     <%= f.input :description %>
 	<%= f.input :ppu, :collection => Job.all.collect { |j| [j.name, j.price]} %>
     <%= f.input :qtt %>
-	<%= f.input :price %>
 	
    
   </div>
