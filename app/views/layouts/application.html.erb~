@@ -4,6 +4,7 @@
   <title>Invoicer</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tag %>
 
 <div id='app_header'>

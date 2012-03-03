@@ -1,0 +1,14 @@
+page.insert_html :bottom, :blips, :partial => @blip
+page[@blip].visual_effect :highlight
+page[:new_blip].reset 
+
+
+/* Add the new comment to the bottom of the comments list */
+$("#blips").append("<%= escape_javascript(render(@blip)) %>");
+
+/* Highlight the new comment */
+$("#blip_<%= @blip.id %>").effect("highlight", {}, 3000);
+
+/* Reset the comment form */
+$("#new_blip")[0].reset();
+page[:new_blip].reset

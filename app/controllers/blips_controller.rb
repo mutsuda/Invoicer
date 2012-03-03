@@ -40,17 +40,17 @@ class BlipsController < ApplicationController
   # POST /blips
   # POST /blips.xml
   def create
-    @blip = Blip.new(params[:blip])
+    @blip = Blip.create!(params[:blip])
     flash[:notice] = "Blip added!"
     respond_to do |format|
-      if @blip.save
+     # if @blip.save
         format.html { redirect_to(@blip, :notice => 'Blip was successfully created.') }
         format.xml  { render :xml => @blip, :status => :created, :location => @blip }
         format.js
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @blip.errors, :status => :unprocessable_entity }
-      end
+     # else
+     #   format.html { render :action => "new" }
+     #   format.xml  { render :xml => @blip.errors, :status => :unprocessable_entity }
+     # end
     end
   end
 
@@ -74,10 +74,12 @@ class BlipsController < ApplicationController
   # DELETE /blips/1.xml
   def destroy
     @blip = Blip.find(params[:id])
+    i = @blip.invoice_id
+    @inv = Invoice.find(i)
     @blip.destroy
 
     respond_to do |format|
-      format.html { redirect_to(blips_url) }
+      format.html { redirect_to(@inv) }
       format.xml  { head :ok }
     end
   end
