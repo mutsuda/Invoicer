@@ -9,8 +9,9 @@
 $("#blips").append("<%= escape_javascript(render(@blip)) %>");
 
 /* Highlight the new comment */
-$("#blip_<%= @blip.id %>").effect("highlight", {}, 3000);
+$("#blips_<%= @blip.id %>").effect("highlight", {}, 3000);
+//$("#blip_<%= @blip.id %>").toggle();
+
 
 /* Reset the comment form */
-$("#new_blip")get(0).reset();
-page[:new_blip].reset
+$("#new_blip").get(0).reset();

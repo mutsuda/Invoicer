@@ -81,6 +81,7 @@ class BlipsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(@inv) }
       format.xml  { head :ok }
+      format.js
     end
   end
 end
