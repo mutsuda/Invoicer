@@ -1,6 +1,6 @@
 <h1>Factures</h1>
 
-<table>
+<table id="invoices">
 <% @invoices.each do |i|  %>
 <tr id = "invoicetd" >
 	<td><%= i.date %></td>
@@ -16,7 +16,7 @@
 	<td><%= best_in_place i, :status, :type => :select, :collection => [[1, "Idle"], [2, "Enviada"], [3, "e-Enviada"], [4, "Cobrada"]] %></td>
 	<td><%= link_to 'Mostra', invoice_path(i) %></td>
 	<td><%= link_to 'Imprimir', printshow_invoice_path(i) %></td>
-	<td><%= button_to 'Elimina', i, :confirm => 'Segur?', :method => :delete %></td>
+	<td><%= button_to 'Elimina', i, :confirm => 'Segur?', :method => :delete, :class => "delete", :remote => true %></td>
 </tr>	
 <% end %>
 </table>
